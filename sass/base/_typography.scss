@@ -1,0 +1,90 @@
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $grayColor;
+}
+
+
+.heading-primary {
+    color: $whiteColor;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    backface-visibility: hidden;
+
+    
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        margin-right: -3.5rem;
+        
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    
+        /* animation-iteration-count: 3; */
+        /* animation-delay: 5s; */
+        @include respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
+        
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1.65rem;
+        margin-right: -1.65rem;
+        animation: moveInRight 1s ease-out;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
+    
+}
+
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    display: inline-block;
+
+    background-image: linear-gradient(to right, $primaryColor, $primaryColorDark, $primaryColorLight, $primaryColor);
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;        
+    -webkit-background-clip: text;       
+    animation: gradientLeftRight 5s linear infinite;
+
+    @include respond(tablet-portrait) {
+        font-size: 3.5rem;
+    }
+
+    @include respond(phone) {
+        font-size: 3rem;
+    }
+}
+
+.heading-tertiary {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $defaultFontSize;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

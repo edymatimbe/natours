@@ -1,0 +1,44 @@
+.utilitie-center-text{
+    text-align: center;
+}
+
+
+
+// Margins
+
+.utilitie-margin-top-huge {
+    margin-top: 10rem !important;
+}
+
+.utilitie-margin-top-large {
+    margin-top: 8rem !important;
+}
+
+.utilitie-margin-top-medium {
+    margin-top: 4rem !important;
+}
+
+.utilitie-margin-top-small {
+    margin-top: 1rem !important;
+}
+// ------------------------------------------------
+.utilitie-margin-bottom-large {
+    margin-bottom: 8rem !important;
+ 
+    @include respond(tablet-portrait){
+        margin-bottom: 5rem !important;
+    }
+}
+
+.utilitie-margin-bottom-medium {
+    margin-bottom: 4rem !important;
+
+    @include respond(tablet-portrait){
+        margin-bottom: 3rem !important;
+    }
+}
+
+.utilitie-margin-bottom-small {
+    margin-bottom: 1rem;
+}
+

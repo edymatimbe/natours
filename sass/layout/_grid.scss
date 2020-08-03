@@ -1,0 +1,68 @@
+// Full row
+.row {
+    max-width: $gridMaxWidth;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+        margin-bottom: $gutterVertical;
+
+        @include respond(tablet-portrait) {
+            margin-bottom: $gutterVerticalMedium;
+        }
+    }
+
+    @include respond(tablet-portrait) {
+        max-width: 55rem;
+        padding: 0 3rem;
+    }
+
+    // @include respond(phone) {
+    //     max-width: 50rem;
+    // }
+
+    @include clearfix;
+
+    [class^="column-"] { 
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutterHorizontal;
+
+            @include respond(tablet-portrait) {
+               margin-right: 0;
+               margin-bottom: $gutterVerticalMedium;
+            }
+        }
+
+        @include respond(tablet-portrait) {
+            width: 100% !important;
+        }
+    }
+    // assigning columns
+// ------------------------------------------------------------------
+    .column-1-of-2 {
+        width: calc((100% - #{$gutterHorizontal}) / 2);
+    }
+
+    .column-1-of-3 {
+        width: calc((100% - 2 * #{$gutterHorizontal}) / 3);
+    }
+
+    .column-1-of-4 {
+        width: calc((100% - 3 * #{$gutterHorizontal}) / 4);
+    }
+// -------------------------------------------------------------------
+    .column-2-of-3 {
+        width: calc(2 * ((100% - 2 * #{$gutterHorizontal}) / 3) + #{$gutterHorizontal});
+    }
+
+    .column-2-of-4 {
+        width: calc(2 * ((100% - 3 * #{$gutterHorizontal}) / 4) + #{$gutterHorizontal});
+    }
+
+// -------------------------------------------------------------------
+    .column-3-of-4 {
+        width: calc(3 * ((100% - 3 * #{$gutterHorizontal}) / 4) + 2 * #{$gutterHorizontal});
+    }
+// -------------------------------------------------------------------
+}

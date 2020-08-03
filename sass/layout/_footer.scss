@@ -1,0 +1,78 @@
+.footer {
+    background-color: $blackColor;
+    padding: 7rem 0;
+    font-size: 1.4rem;
+    color: $grayColorLight;
+
+    @include respond(tablet-portrait) {
+        padding: 8rem 0;
+    }
+
+    &__logo-box {
+        text-align: center;
+        margin-bottom: 6rem;
+
+        @include respond(tablet-portrait) {
+           margin-bottom: 6rem;
+        }
+    }
+
+    &__logo {
+        width: 20rem;
+        height: auto;
+    }
+
+    &__navigation {
+        border-top: .1rem solid $grayColor;
+        padding-top: 2rem;
+        display: inline-block;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right:1.5rem;
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $grayColorLight;
+            background-color: $blackColor;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s ease-out;
+        }
+
+        &:hover, &:active {
+            color: $primaryColor;
+            box-shadow: 0 .1rem 1rem rgba($grayColor, 1);
+            transform: rotate(5deg) scale(1.3);
+        }
+    }
+
+    &__copyright {
+        font-weight: 300;
+        border-top: .1rem solid $grayColor;
+        padding-top: 2rem;
+        width: 90%;
+        float: right;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+            float: none;
+        }
+    }
+}

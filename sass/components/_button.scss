@@ -1,0 +1,101 @@
+.button {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .1s;
+        backface-visibility: hidden;
+        position: relative;
+        font-size: 1.6rem;
+
+        border: none;
+        cursor: pointer;
+    } 
+
+    &:hover { 
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($blackColor, .2);
+
+        &::after {
+            transform: scaleX(1.5) scaleY(1.6);
+            opacity: 0;
+        }
+    }   
+
+    &:active, &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgba($blackColor, .2);
+    } 
+    
+    &--white { 
+        background-color: $whiteColor;
+        color: $grayColor;  
+        
+        &::after{
+            background-color: $whiteColor;
+        }
+    }
+
+    &--green {
+        background-color: $primaryColor;
+        color: $whiteColor;  
+
+        &::after{
+            background-color: $primaryColor;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .3s;
+    }
+
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+
+.button-text {
+    &:link,
+    &:visited {
+        font-size: $defaultFontSize;
+        font-weight: 700;
+        color: $primaryColor;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: .1rem solid transparent;
+        padding: .3rem;
+        background-image: linear-gradient(to right, $primaryColor, $primaryColorDark, $primaryColorLight, $primaryColor);
+        background-size: 200% auto;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;        
+        -webkit-background-clip: text;       
+        animation: gradientLeftRight 1.5s linear infinite;
+        transition: border-bottom .2s;
+    }
+
+    &:hover {
+        background-image: none;
+        background-color: $primaryColor;
+        border-bottom: .1rem solid $primaryColor;
+    }
+
+    &:active {
+        color: $primaryColor; 
+    }
+}
